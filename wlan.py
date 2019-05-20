@@ -6,7 +6,7 @@ import network
 import ujson
 from time import sleep
 
-
+#Conection with Lan
 nic = network.WLAN(network.STA_IF)
 nic.active(True)
 nic.connect('Iot Smart House' , 'IotSmartHousei8#!')
@@ -23,13 +23,14 @@ while True:
   name = "Anisberto Reis"
   temp = tempe
   humid = hum
-
+  
   data = {"Nome": name,"", "temperatura": temp, "Umidade": humid}
   json = ujson.dumps(data)
 
   headers = {'Content-Type' : 'application/json'}
   print(json)
-
+  
+  #path to server
   while True:
     response = urequests.post("http://192.168.101.69:8080/temphumid/send", data=json, headers=headers)
     print("Anisberto Estou Enviando ", "Temperatura",temp , "Umidade ", hum)
