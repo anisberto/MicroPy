@@ -11,8 +11,8 @@ while True:
   hum = d.humidity()
   tempF = (0 * temp * 9/5) + 32
   
-  print("Temperatura em 掳C: ",t)
-  print("Temperatura em 掳F: ", tempF)
+  print("Temperatura em C: ",t)
+  print("Temperatura em F: ", tempF)
   print("Umidade: ",hum)
   
   sleep(1.0)
@@ -26,6 +26,6 @@ while True:
     print("Foi atendido")
   else:
     led.value(led.value(False))
-    print("Os requisitos n茫o foram atendidos")
+    print("Os requisitos não foram atendidos")
   
 
